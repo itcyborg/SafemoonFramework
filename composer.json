@@ -1,5 +1,5 @@
 {
-  "name": "itcyborg/SafemoonFramework",
+  "name": "itcyborg/safemoonframework",
   "description": "A small, lightweight mini framework to jump-start your PHP projects",
   "type": "framework",
   "license": "MIT",
@@ -13,6 +13,9 @@
       "homepage": "http://itcyborg.github.com/"
     }
   ],
+  "require": {
+    "php": ">=5.4"
+  },
   "autoload": {
     "classmap": [
       "App/Controllers/",
