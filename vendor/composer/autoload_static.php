@@ -4,23 +4,53 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita9a0e3d7b857d0c791d54bad0a39511f
+class ComposerStaticInit954aef529c87391707a068ea93cf1085
 {
+    public static $files = array(
+        '6e15051da4118da37b13a1553e82ca9a' => __DIR__ . '/../..' . '/Bootstrap/Bootstrap.php',
+    );
+
     public static $classMap = array(
+        'AT' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/AT.php',
+        'ATUser' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/ATUser.php',
+        'AfricasTalkingGateway' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/AfricasTalkingGateway.php',
+        'AfricasTalkingGatewayException' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/AfricasTalkingGateway.php',
+        'Airtime' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/Airtime.php',
         'App' => __DIR__ . '/../..' . '/App/App.php',
+        'Auth' => __DIR__ . '/../..' . '/App/Core/Auth/Auth.php',
+        'AuthErrors' => __DIR__ . '/../..' . '/App/Core/Auth/AuthErrors.php',
+        'AuthStorage' => __DIR__ . '/../..' . '/App/Core/Auth/AuthStorage.php',
+        'Authenticate' => __DIR__ . '/../..' . '/App/Core/Auth/Authenticate.php',
+        'Call' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/Call.php',
+        'ComposerAutoloaderInit954aef529c87391707a068ea93cf1085' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'Composer\\Autoload\\ComposerStaticInit954aef529c87391707a068ea93cf1085' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Config' => __DIR__ . '/../..' . '/App/Core/Config/Config.php',
+        'Connection' => __DIR__ . '/../..' . '/App/Core/Database/Connection.php',
         'Controller' => __DIR__ . '/../..' . '/App/Core/Controller/Controller.php',
         'DB' => __DIR__ . '/../..' . '/App/Core/Database/DB.php',
+        'GenericUser' => __DIR__ . '/../..' . '/App/Core/Auth/GenericUser.php',
         'Logger' => __DIR__ . '/../..' . '/App/Core/Logger/Logger.php',
+        'Mail' => __DIR__ . '/../..' . '/App/Core/Mailer/Mail.php',
+        'PasswordService' => __DIR__ . '/../..' . '/App/Core/Auth/PasswordService.php',
+        'Payments' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/Payments.php',
+        'QueryBuilder' => __DIR__ . '/../..' . '/App/Core/Database/QueryBuilder.php',
+        'RegisterUser' => __DIR__ . '/../..' . '/App/Core/Auth/RegisterUser.php',
+        'RememberToken' => __DIR__ . '/../..' . '/App/Core/Auth/RememberToken.php',
         'Request' => __DIR__ . '/../..' . '/App/Core/Request/Request.php',
         'Router' => __DIR__ . '/../..' . '/App/Core/Router/Router.php',
+        'SMS' => __DIR__ . '/../..' . '/App/Core/AfricasTalking/SMS.php',
+        'SafeExceptions' => __DIR__ . '/../..' . '/App/Core/ExceptionHandler/SafeExceptions.php',
+        'SanitizeRequest' => __DIR__ . '/../..' . '/App/Core/Request/SanitizeRequest.php',
+        'VerifyUser' => __DIR__ . '/../..' . '/App/Core/Auth/VerifyUser.php',
         'Views' => __DIR__ . '/../..' . '/App/Core/View/Views.php',
+        'indexController' => __DIR__ . '/../..' . '/App/Controllers/indexController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInita9a0e3d7b857d0c791d54bad0a39511f::$classMap;
+            $loader->classMap = ComposerStaticInit954aef529c87391707a068ea93cf1085::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -15,8 +15,8 @@ class Config
 
     protected static function read()
     {
-        $root = $_SERVER['DOCUMENT_ROOT'];
-        $file = "Config/Config.ini";
+        $root = App::root();
+        $file = "/Config/Config.ini";
         return parse_ini_file(
             $root . $file, true
         );
@@ -46,5 +46,10 @@ class Config
     public static function debug()
     {
         return self::read()['debug'];
+    }
+
+    public static function getConfig($string)
+    {
+        return self::read()[$string];
     }
 }

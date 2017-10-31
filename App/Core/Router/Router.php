@@ -13,11 +13,14 @@ class Router
         'GET' => [],
         'POST' => []
     ];
+
+    public static $call = [];
+    public static $controller = [];
     private $path;
 
     public function __construct()
     {
-        $this->path = $_SERVER['DOCUMENT_ROOT'] . "/App/Controllers/";
+        $this->path = App::root() . "/App/Controllers/";
     }
 
     public static function load($file)
@@ -35,18 +38,37 @@ class Router
     public function direct($uri, $requestType)
     {
         if (array_key_exists($uri, $this->routes[$requestType])) {
-            return $this->routes[$requestType][$uri];
+            if (!strstr($this->routes[$requestType][$uri], '.php')) {
+                if (is_readable($this->routes[$requestType][$uri] . ".php")) {
+                    return $this->routes[$requestType][$uri] . ".php";
+                }
+                throw new Exception("Controller '{" . self::$controller . ".php}' not Found in '$this->path'");
+            }
+            if (is_readable($this->routes[$requestType][$uri])) {
+                return $this->routes[$requestType][$uri];
+            }
+            throw new Exception("Controller '{" . self::$controller . ".php}' not Found in '$this->path'");
         }
         throw new Exception("Page not found");
     }
 
     public function get($uri, $controller)
     {
-        $this->routes['GET'][$uri] = $this->path . $controller;
+        if (strstr($controller, '@')) {
+            $tmp = explode('@', $controller);
+            self::$call[$uri] = $tmp[1];
+            self::$controller = $tmp[0];
+            $this->routes['GET'][$uri] = $this->path . $tmp[0];
+        }
     }
 
     public function post($uri, $controller)
     {
-        $this->routes['POST'][$uri] = $this->path . $controller;
+        if (strstr($controller, '@')) {
+            $tmp = explode('@', $controller);
+            self::$call[$uri] = $tmp[1];
+            self::$controller = $tmp[0];
+            $this->routes['POST'][$uri] = $this->path . $tmp[0];
+        }
     }
 }

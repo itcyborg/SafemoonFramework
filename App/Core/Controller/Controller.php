@@ -8,5 +8,7 @@
 
 class Controller extends Views
 {
-
+    public function __construct()
+    {
+    }
 }

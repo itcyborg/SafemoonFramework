@@ -6,7 +6,6 @@
  * Time: 2:50 PM
  */
 
-class DB
+class DB extends QueryBuilder
 {
-
 }

@@ -5,5 +5,6 @@
  * Date: 10/26/2017
  * Time: 9:06 PM
  */
-$router->get("", "index.php");
-$router->get("user", "index.php");
+$router->get("", "indexController@home");
+$router->post('voice/say', 'indexController@say');
+$router->get("user", "indexController@index");

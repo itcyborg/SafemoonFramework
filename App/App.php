@@ -8,12 +8,25 @@
 
 class App
 {
+    public static function root()
+    {
+        return __DIR__ . "/../";
+    }
     public static function boot()
     {
     }
 
     public static function routes()
     {
-        return $_SERVER['DOCUMENT_ROOT'] . "/App/Routes/routes.php";
+        return self::root() . "/App/Routes/routes.php";
+    }
+
+    public static function action()
+    {
+
+    }
+
+    public static function run()
+    {
     }
 }

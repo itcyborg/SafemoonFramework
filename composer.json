@@ -1,5 +1,5 @@
 {
-  "name": "itcyborg/safemoon",
+  "name": "itcyborg/SafemoonFramework",
   "description": "A small, lightweight mini framework to jump-start your PHP projects",
   "type": "framework",
   "license": "MIT",
@@ -17,6 +17,9 @@
     "classmap": [
       "App/Controllers/",
       "./"
+    ],
+    "files": [
+      "Bootstrap/Bootstrap.php"
     ]
   }
 }
