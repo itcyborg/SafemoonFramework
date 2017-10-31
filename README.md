@@ -5,7 +5,7 @@ A small, lightweight mini framework to jump-start your PHP projects
 
 ``composer create-project itcyborg/safemoonframework``
 
-###Requirements
+### Requirements
 * composer
 * php v5.4 or greater
 
