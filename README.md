@@ -1,7 +1,8 @@
 # Safemoon Framework
 A small, lightweight mini framework to jump-start your PHP projects
 
-##How to install
+## How to install
+
 ``composer create-project itcyborg/safemoonframework``
 
 ###Requirements
