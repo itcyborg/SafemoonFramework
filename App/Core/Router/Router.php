@@ -56,8 +56,8 @@ class Router
     {
         if (strstr($controller, '@')) {
             $tmp = explode('@', $controller);
-            self::$call[$uri] = $tmp[1];
-            self::$controller = $tmp[0];
+            self::$call[$uri]['GET'] = $tmp[1];
+            self::$controller[$uri] = $tmp[0];
             $this->routes['GET'][$uri] = $this->path . $tmp[0];
         }
     }
@@ -66,8 +66,8 @@ class Router
     {
         if (strstr($controller, '@')) {
             $tmp = explode('@', $controller);
-            self::$call[$uri] = $tmp[1];
-            self::$controller = $tmp[0];
+            self::$call[$uri]['POST'] = $tmp[1];
+            self::$controller[$uri] = $tmp[0];
             $this->routes['POST'][$uri] = $this->path . $tmp[0];
         }
     }

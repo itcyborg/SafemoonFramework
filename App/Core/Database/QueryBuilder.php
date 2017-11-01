@@ -106,19 +106,27 @@ class QueryBuilder extends Connection
 
     }
 
-    public static function delete($table, $id)
-    {
-
-    }
 
     /*
      * delete record
      * todo delete record using id
      */
 
-    public static function save($table, array $data)
+    public static function delete($table, $id)
     {
-
+        try {
+            ##code here
+            $connection = Connection::make();
+            $statement = sprintf('delete from %s where id=%s',
+                $table, $id
+            );
+            $statement = $connection->prepare($statement);
+            $statement->execute();
+            return $statement->fetch(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            ##handle exceptions here
+            return $e->getMessage();
+        }
     }
 
 
@@ -126,6 +134,29 @@ class QueryBuilder extends Connection
      *
      * todo insert record
      */
+
+    public static function save($table, $parameters)
+    {
+        if (is_null($parameters)) {
+            throw new Exception("No data provided");
+        }
+        $sql = sprintf(
+            'insert into %s (%s) value (%s)',
+            $table,
+            implode(',', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+        //insert into (name) values (:name)
+
+        try {
+            $connection = Connection::make();
+            $statement = $connection->prepare($sql);
+            return $statement->execute($parameters);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
 
     public function count($table)
     {
@@ -136,7 +167,7 @@ class QueryBuilder extends Connection
             );
             return $statement;
         } catch (Exception $e) {
-
+            return $e->getMessage();
         }
 
     }

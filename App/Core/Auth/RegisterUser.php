@@ -8,12 +8,17 @@
 
 class RegisterUser implements GenericUser
 {
+    private static $email;
+    private static $password;
+    private static $remember_token;
+    private static $username;
+    private static $confirm_password;
     /**
      * @inheritDoc
      */
     public static function email($email)
     {
-        // TODO: Implement email() method.
+        self::$email = $email;
     }
 
     /**
@@ -21,7 +26,7 @@ class RegisterUser implements GenericUser
      */
     public static function password($password)
     {
-        // TODO: Implement password() method.
+        self::$password = $password;
     }
 
     /**
@@ -29,7 +34,7 @@ class RegisterUser implements GenericUser
      */
     public static function confirmPassword($confirmPassword)
     {
-        // TODO: Implement confirmPassword() method.
+        self::$confirm_password = $confirmPassword;
     }
 
     /**
@@ -37,11 +42,16 @@ class RegisterUser implements GenericUser
      */
     public static function rememberToken()
     {
-        // TODO: Implement rememberToken() method.
+        self::$remember_token = RememberToken::generate();
     }
 
     public static function username($username)
     {
-        // TODO: Implement username() method.
+        self::$username = $username;
+    }
+
+    public function save()
+    {
+
     }
 }

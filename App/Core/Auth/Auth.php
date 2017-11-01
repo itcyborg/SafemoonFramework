@@ -8,12 +8,26 @@
 
 class Auth extends Authenticate
 {
+    public static $user;
     public static function user()
     {
+        return self::$user;
+    }
+
+    public static function setUser($user)
+    {
+        self::$user = $user;
     }
 
     public static function id()
     {
+        try {
+            ##code here
+            return self::$user['id'];
+        } catch (Exception $e) {
+            ##handle exceptions here
+            return $e->getMessage();
+        }
     }
 
     public function lastLogin()

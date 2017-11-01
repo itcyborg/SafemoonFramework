@@ -8,4 +8,8 @@
 
 class DB extends QueryBuilder
 {
+    public static function save($table, array $data)
+    {
+        return QueryBuilder::save($table, $data);
+    }
 }

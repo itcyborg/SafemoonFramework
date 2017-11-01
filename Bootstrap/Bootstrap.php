@@ -33,16 +33,26 @@ function section($sectionName)
     return Views::section($sectionName);
 }
 
+/**
+ * dump the data and exit. same as var_dump() then die();
+ * displays the dump data beautifully for easier debugging.
+ * @param $data
+ */
 function dd($data)
 {
     echo "<pre>";
     var_dump($data);
     echo "</pre>";
-    return;
+    exit;
 }
 
+/**
+ * Better reference your assets in any view.
+ * @param $asset
+ * @return string
+ */
 function asset($asset)
 {
-    echo AssetLoader::load($asset);
+    return AssetLoader::load($asset);
 }
 

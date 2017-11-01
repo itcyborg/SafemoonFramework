@@ -11,9 +11,9 @@ class AssetLoader
     public static function load($asset)
     {
         $root = App::root();
-        $assetDir = "/Public/";
+        $assetDir = "Public/";
         if (is_readable($root . $assetDir . $asset)) {
-            return $root . $assetDir . $asset;
+            return (string)$assetDir . $asset;
         }
         throw new Exception('Asset not found');
     }
