@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "aefc80c97db293222bb68243ff1105db",
+    "packages": [
+        {
+            "name": "itcyborg/safemooncore",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itcyborg/safemoonframeworkcore.git",
+                "reference": "010fe7107750d0eb01ec9f90a85434ed412f2b01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itcyborg/safemoonframeworkcore/zipball/010fe7107750d0eb01ec9f90a85434ed412f2b01",
+                "reference": "010fe7107750d0eb01ec9f90a85434ed412f2b01",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itcyb",
+                    "email": "itcyborg@outlook.com"
+                }
+            ],
+            "description": "Driving core for Safemoon Framework",
+            "time": "2017-11-01T14:08:23+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4"
+    },
+    "platform-dev": []
+}
