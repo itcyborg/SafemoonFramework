@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "name": "itcyborg/safemooncore",
+    "version": "v1.0",
+    "version_normalized": "1.0.0.0",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/itcyborg/safemoonframeworkcore.git",
+      "reference": "010fe7107750d0eb01ec9f90a85434ed412f2b01"
+    },
+    "dist": {
+      "type": "zip",
+      "url": "https://api.github.com/repos/itcyborg/safemoonframeworkcore/zipball/010fe7107750d0eb01ec9f90a85434ed412f2b01",
+      "reference": "010fe7107750d0eb01ec9f90a85434ed412f2b01",
+      "shasum": ""
+    },
+    "require": {
+      "php": ">=5.4"
+    },
+    "time": "2017-11-01T14:08:23+00:00",
+    "type": "library",
+    "installation-source": "dist",
+    "notification-url": "https://packagist.org/downloads/",
+    "license": [
+      "MIT"
+    ],
+    "authors": [
+      {
+        "name": "itcyb",
+        "email": "itcyborg@outlook.com"
+      }
+    ],
+    "description": "Driving core for Safemoon Framework"
+  }
+]
