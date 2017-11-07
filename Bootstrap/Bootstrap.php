@@ -16,6 +16,11 @@ function view($viewName, $data = null)
     return Views::view($viewName, $data);
 }
 
+function mailView($view)
+{
+    return Views::mailView($view);
+}
+
 /**
  * @param $partialName : Enter the name of the partial without the .php extension
  * @return mixed
@@ -33,11 +38,6 @@ function section($sectionName)
     return Views::section($sectionName);
 }
 
-/**
- * dump the data and exit. same as var_dump() then die();
- * displays the dump data beautifully for easier debugging.
- * @param $data
- */
 function dd($data)
 {
     echo "<pre>";
@@ -46,11 +46,6 @@ function dd($data)
     exit;
 }
 
-/**
- * Better reference your assets in any view.
- * @param $asset
- * @return string
- */
 function asset($asset)
 {
     return AssetLoader::load($asset);
