@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.4",
-    "itcyborg/safemooncore":"1.*",
+    "itcyborg/safemooncore": ">=1.2.*"
     "phpmailer/phpmailer": "^6.0"
   },
   "autoload": {
